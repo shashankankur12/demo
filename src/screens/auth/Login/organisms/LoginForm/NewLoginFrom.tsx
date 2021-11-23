@@ -35,9 +35,6 @@ type LoginFormProps = {
 };
 
 export const NewLoginForm = ({ loading, onSubmit }: LoginFormProps) => {
-  const handleForgotPassword = () => {
-    navigate('ForgotPassword');
-  };
 
   return (
     <Formik<FormValues>
@@ -50,15 +47,6 @@ export const NewLoginForm = ({ loading, onSubmit }: LoginFormProps) => {
             <Text variant="headlineSemibold" localeId="new.login.titel" my="xl" />
             <FormUserIdInput />
             <FormPasswordInput />
-
-            <Box alignSelf="flex-end">
-              <TextButton
-                variant="bodyMedium"
-                onPress={handleForgotPassword}
-                localeId="login.forgotpassword"
-                pb="l"
-              />
-            </Box>
 
             <Button
               loading={loading}
